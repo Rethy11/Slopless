@@ -3,12 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>Slopless</title>
 
 <!-- Icons and Open Graph Image -->
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:image" content="og-image.png">
+<link rel="icon" type="image/svg+xml" href="https://rethy11.github.io/Slopless/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://rethy11.github.io/Slopless/apple-touch-icon.png">
+<meta property="og:url" content="https://rethy11.github.io/Slopless/">
+<meta property="og:image" content="https://rethy11.github.io/Slopless/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:title" content="Slopless">
 <meta property="og:description" content="Web results, no AI overview.">
 
@@ -183,12 +188,12 @@
       return;
     }
     
-    // Standard HTTPS routing to Google Web results
+    // Completely standalone HTTPS routing
     const url = 'https://www.google.com/search?q=' + encodeURIComponent(query) + '&udm=14';
-    window.location.href = url;
+    window.location.assign(url);
   });
 
-  // Ambient, cursor-reactive wave field -- clean water rising behind the filtered search
+  // Ambient, cursor-reactive wave field
   (function () {
     const canvas = document.getElementById('wave-canvas');
     const ctx = canvas.getContext('2d');
@@ -220,7 +225,6 @@
     }, { passive: true });
     window.addEventListener('touchend', () => { mouse.active = false; });
 
-    // Teal family only -- three depths of the same "filtered water" idea
     const layers = [
       { fraction: 0.52, amp: 70,  speed: 1.00, primary: '31,122,100',  secondary: '191,227,216', alphaA: 0.16, alphaB: 0.09 },
       { fraction: 0.68, amp: 95,  speed: 0.75, primary: '95,175,151',  secondary: '31,122,100',   alphaA: 0.16, alphaB: 0.10 },
