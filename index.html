@@ -183,20 +183,9 @@
       return;
     }
     
-    let url = 'https://www.google.com/search?q=' + encodeURIComponent(query) + '&udm=14';
-
-    // Detect iOS to attempt forcing the Google Chrome app
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    const isChrome = navigator.userAgent.match('CriOS');
-
-    if (isIOS && !isChrome) {
-      // The googlechromes:// protocol launches the Chrome iOS app
-      const chromeUrl = url.replace('https://', 'googlechromes://');
-      // window.location is used instead of window.open to prevent popup blockers from stopping the app switch
-      window.location.href = chromeUrl;
-    } else {
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
+    // Standard HTTPS routing to Google Web results
+    const url = 'https://www.google.com/search?q=' + encodeURIComponent(query) + '&udm=14';
+    window.location.href = url;
   });
 
   // Ambient, cursor-reactive wave field -- clean water rising behind the filtered search
