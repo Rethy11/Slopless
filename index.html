@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Slopless</title>
+
+<!-- Icons and Open Graph Image -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:image" content="og-image.png">
+<meta property="og:title" content="Slopless">
+<meta property="og:description" content="Web results, no AI overview.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -139,7 +147,7 @@
 
   <div class="page">
     <div class="wordmark"><span class="slop">slop</span><span class="less">less</span></div>
-    <p class="tagline">web results, no AI overview</p>
+    <p class="tagline" id="tagline-text">web results, no AI overview</p>
 
     <form id="search-form">
       <div class="search-row">
@@ -151,6 +159,19 @@
   </div>
 
 <script>
+  // Random Taglines
+  const taglines = [
+    "web results, no AI overview",
+    "Learn more, Slopless.",
+    "Because AI hallucinations are exhausting.",
+    "Just the links, please.",
+    "100% artisanal, hand-crafted blue links.",
+    "Like it's 2010 all over again.",
+    "Zero artificial intelligence, maximum actual intelligence."
+  ];
+  
+  document.getElementById('tagline-text').innerText = taglines[Math.floor(Math.random() * taglines.length)];
+
   const form = document.getElementById('search-form');
   const input = document.getElementById('q');
 
@@ -161,8 +182,21 @@
       input.focus();
       return;
     }
-    const url = 'https://www.google.com/search?q=' + encodeURIComponent(query) + '&udm=14';
-    window.open(url, '_blank', 'noopener,noreferrer');
+    
+    let url = 'https://www.google.com/search?q=' + encodeURIComponent(query) + '&udm=14';
+
+    // Detect iOS to attempt forcing the Google Chrome app
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isChrome = navigator.userAgent.match('CriOS');
+
+    if (isIOS && !isChrome) {
+      // The googlechromes:// protocol launches the Chrome iOS app
+      const chromeUrl = url.replace('https://', 'googlechromes://');
+      // window.location is used instead of window.open to prevent popup blockers from stopping the app switch
+      window.location.href = chromeUrl;
+    } else {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
   });
 
   // Ambient, cursor-reactive wave field -- clean water rising behind the filtered search
