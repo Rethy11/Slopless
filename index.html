@@ -61,7 +61,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    
+    /* Dynamically account for device notches/home bars to ensure true vertical centering in PWAs */
+    padding: calc(24px + env(safe-area-inset-top)) 
+             calc(24px + env(safe-area-inset-right)) 
+             calc(24px + env(safe-area-inset-bottom)) 
+             calc(24px + env(safe-area-inset-left));
   }
   .wordmark {
     font-family: 'Sora', sans-serif;
