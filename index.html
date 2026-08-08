@@ -191,6 +191,33 @@
   .suggestion-item:hover {
     background: var(--bg);
   }
+
+  .legal-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    z-index: 1;
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+    pointer-events: none;
+  }
+  .legal-footer a {
+    color: var(--muted);
+    text-decoration: none;
+    pointer-events: auto;
+  }
+  .legal-footer a:hover,
+  .legal-footer a:focus-visible {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .legal-footer .dot {
+    margin: 0 6px;
+    opacity: 0.6;
+  }
 </style>
 </head>
 <body>
@@ -210,6 +237,10 @@
         <div class="suggestions-dropdown" id="suggestions-dropdown"></div>
       </div>
     </form>
+  </div>
+
+  <div class="legal-footer">
+    <a href="about.html">About</a><span class="dot">·</span><a href="privacy.html">Privacy</a><span class="dot">·</span><a href="terms.html">Terms</a>
   </div>
 
 <script>
