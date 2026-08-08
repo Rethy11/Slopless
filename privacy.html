@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Slopless</title>
+<meta name="description" content="Privacy Policy for Slopless, a web search tool without an AI overview.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBFBF8;
+    --ink: #1B1F23;
+    --muted: #8A8F98;
+    --accent: #1F7A64;
+    --accent-soft: #E4F1EC;
+    --line: #E3E3DE;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px 80px;
+  }
+  .page { width: 100%; max-width: 480px; }
+  .back {
+    display: inline-block;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .back:hover, .back:focus-visible { color: var(--accent); }
+  h1 {
+    font-family: 'Sora', sans-serif; font-weight: 700;
+    letter-spacing: -0.01em; font-size: 22px; margin: 0 0 4px; color: var(--ink);
+  }
+  .updated { color: var(--muted); font-size: 11.5px; margin-bottom: 22px; }
+  .panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 22px;
+  }
+  h2 {
+    font-family: 'Sora', sans-serif; font-weight: 600;
+    font-size: 13px; color: var(--accent); margin: 20px 0 8px;
+  }
+  h2:first-child { margin-top: 0; }
+  p { font-size: 13.5px; color: var(--ink); line-height: 1.65; margin: 0 0 12px; }
+  ul { margin: 0 0 12px; padding-left: 20px; }
+  li { font-size: 13.5px; color: var(--ink); line-height: 1.6; margin-bottom: 5px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+  a:hover, a:focus-visible { border-color: var(--accent); }
+  code { background: var(--accent-soft); color: var(--accent); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+  footer {
+    margin-top: 32px; text-align: center; font-size: 11px; color: var(--muted); opacity: 0.85;
+  }
+  footer a { color: var(--muted); border: none; }
+  footer a:hover, footer a:focus-visible { color: var(--accent); text-decoration: underline; }
+  footer .dot { margin: 0 6px; opacity: 0.6; }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="index.html">&larr; Back to Slopless</a>
+
+  <h1>Privacy Policy</h1>
+  <div class="updated">Last updated August 7, 2026</div>
+
+  <div class="panel">
+    <h2>Short version</h2>
+    <p>Slopless has no server and no database. It doesn't have accounts, cookies, or analytics. What it does do is send your query to Google — as autocomplete suggestions while you type, and again when you hit search — because that's how it gets you Google's results.</p>
+
+    <h2>How the tool works</h2>
+    <p>Slopless is a static page that runs entirely in your browser. It doesn't have a backend of its own, so there's nothing on my end for your queries to pass through or be logged by.</p>
+
+    <h2>Search suggestions</h2>
+    <p>As you type, Slopless asks Google's public autocomplete endpoint (<code>suggestqueries.google.com</code>) for suggestions, the same way Chrome's address bar or google.com would. Each keystroke you pause on is sent to Google for this purpose. That request is handled entirely by Google and is covered by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>, not by me.</p>
+
+    <h2>Search submission</h2>
+    <p>When you hit search, Slopless redirects your browser to <code>google.com/search</code> with your query and the <code>udm=14</code> parameter, which asks Google to show its web-only results view. From that point on you're on Google's site, interacting directly with Google, subject to their privacy policy and terms — Slopless itself doesn't see, store, or forward your query anywhere else.</p>
+
+    <h2>Data collection</h2>
+    <p>I don't operate any backend, database, or analytics service for this site, and I don't collect names, emails, IP addresses, search history, or usage data.</p>
+
+    <h2>Cookies and local storage</h2>
+    <p>This site doesn't set cookies and doesn't use browser storage to save anything about you or your searches. Google's own pages (the suggestion endpoint and search results) may set their own cookies as part of their service — that's outside my control and covered by Google's policies.</p>
+
+    <h2>Hosting</h2>
+    <p>This site is hosted on GitHub Pages. GitHub may log basic server access information (like IP address and request time) as part of operating its hosting infrastructure; that's governed by <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's own privacy statement</a>, not by me.</p>
+
+    <h2>Third-party fonts</h2>
+    <p>This page loads fonts from Google Fonts, which may see the request as part of serving them.</p>
+
+    <h2>Children's privacy</h2>
+    <p>Slopless doesn't knowingly collect information from anyone, including children, since it doesn't collect or store information itself. Search queries are sent to Google as described above.</p>
+
+    <h2>Changes</h2>
+    <p>If anything about how this tool works ever changes in a way that affects privacy, this page will be updated and the date above will change.</p>
+
+    <h2>Contact</h2>
+    <p>Questions can be raised as an issue on <a href="https://github.com/rethy11/Slopless" target="_blank" rel="noopener">GitHub</a>.</p>
+  </div>
+
+  <footer>
+    <a href="index.html">Slopless</a><span class="dot">·</span><a href="about.html">About</a><span class="dot">·</span><a href="terms.html">Terms</a>
+  </footer>
+</div>
+</body>
+</html>
